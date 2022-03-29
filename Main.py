@@ -115,13 +115,13 @@ class Player:
     def draw(self):
         u = (2 if self.is_falling else px.frame_count // 3 % 2) * 8
         w = 8 if self.direction > 0 else -8
-        px.blt(self.x, self.y, 0, u, 16, w, 8, TRANSPARENT_COLOR)
+        px.blt(self.x, self.y, 1, 0, 0, 8, 8, TRANSPARENT_COLOR)
 
 class app():
     def __init__(self):
         px.init(128, 128, title="Platformer")
         px.load("assets/assets.pyxres")
-        px.image(0).load(0, 0, "assets/player.png")
+        px.image(1).load(0, 0, "assets/player.png")
         global player
         player = Player(0, 0)
         px.playm(0, loop=True)
